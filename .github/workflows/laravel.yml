@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
 
-      services:
+    services:
       # Label used to access the service container
       postgres:
         # Docker Hub image
