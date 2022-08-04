@@ -7,7 +7,13 @@ on:
     branches: [ "main" ]
 
 
-    services:
+jobs:
+  laravel-tests:
+
+    runs-on: ubuntu-latest
+
+
+      services:
       # Label used to access the service container
       postgres:
         # Docker Hub image
@@ -23,11 +29,6 @@ on:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 5
-jobs:
-  laravel-tests:
-
-    runs-on: ubuntu-latest
-
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
