@@ -20,15 +20,15 @@ jobs:
         image: postgres:8
         # Provide the password for postgres
         env:
-          POSTGRES_USER: root
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: laravue3_ts
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
           --health-interval 5s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
