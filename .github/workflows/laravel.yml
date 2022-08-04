@@ -18,14 +18,10 @@ jobs:
         image: postgres:8
         # Provide the password for postgres
         env:
-            POSTGRES_USER: ${DB_USERNAME}
             POSTGRES_PASSWORD: postgres
-            POSTGRES_DB: ${DB_DATABASE}
-            POSTGRES_HOST_AUTH_METHOD: "trust"
-
         options: >-
           --health-cmd pg_isready
-          --health-interval 10s
+          --health-interval 5s
           --health-timeout 5s
           --health-retries 5
         ports:
@@ -47,4 +43,7 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
     - name: Execute tests (Unit and Feature tests) via Pest
+      env:
+        POSTGRES_HOST: localhost
+        POSTGRES_PORT: 5432
       run: vendor/bin/pest
