@@ -43,7 +43,7 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
     - name: Execute tests (Unit and Feature tests) via Pest
-        env:
-          POSTGRES_HOST: postgres
-          POSTGRES_PORT: 5432
+      env:
+        POSTGRES_HOST: postgres
+        POSTGRES_PORT: 5432
       run: vendor/bin/pest
