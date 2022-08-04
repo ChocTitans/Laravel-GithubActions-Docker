@@ -41,8 +41,7 @@ services:
             - ./postgres_data:/var/lib/postgresql
         environment:
             POSTGRES_USER: ${DB_USERNAME}
-            POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_PASSWORD: password
             POSTGRES_DB: ${DB_DATABASE}
-            POSTGRES_HOST_AUTH_METHOD: "trust"
         networks:
         - webapp
