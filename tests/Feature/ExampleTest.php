@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -17,4 +17,10 @@ class ExampleTest extends TestCase
     {
         $this->seed();
     }
+
+    public function test_it_exists()
+    {
+        $this->get('/test')->assertStatus(200);
+    }
+
 }
