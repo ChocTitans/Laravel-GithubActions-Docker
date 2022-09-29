@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
 
     public function test_store()
     {
-        $this->seed();
+        $this->get('/store')->assertStatus(200);
     }
 
     public function test_it_exists()
