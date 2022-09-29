@@ -23,4 +23,5 @@ class ExampleTest extends TestCase
         $this->get('/test')->assertStatus(200);
     }
 
+    
 }
