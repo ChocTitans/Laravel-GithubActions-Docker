@@ -15,7 +15,6 @@ class ExampleTest extends TestCase
 
     public function test_store()
     {
-        $this->get('/store')->assertStatus(200);
     }
 
     public function test_it_exists()
@@ -23,5 +22,5 @@ class ExampleTest extends TestCase
         $this->get('/test')->assertStatus(200);
     }
 
-    
+
 }
