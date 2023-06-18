@@ -1,5 +1,3 @@
 Last update
 
-
-Soutenance
-
+Docker + Github Actions
