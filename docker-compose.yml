@@ -6,7 +6,7 @@ networks:
 services:
     nginx:
         image: nginx:stable-alpine
-        container_name: ${APP_NAME}_nginx
+        container_name: nginx
         ports:
         - "8000:80"
         links:
@@ -23,7 +23,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: ${APP_NAME}_php
+        container_name: php
         volumes:
         - ./:/var/www/html
         ports:
@@ -33,16 +33,16 @@ services:
 
     postgres:
         image: postgres:8
-        container_name: ${APP_NAME}_postgres
+        container_name: postgres
         restart: on-failure
         ports:
         - "5433:5432"
         volumes:
             - ./postgres_data:/var/lib/postgresql
         environment:
-            POSTGRES_USER: ${DB_USERNAME}
-            POSTGRES_PASSWORD: ${DB_PASSWORD}
-            POSTGRES_DB: ${DB_DATABASE}
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: 
+            POSTGRES_DB: postgres
             
         networks:
         - webapp
